@@ -919,13 +919,13 @@ class Left implements Input {
 
 class Up implements Input {
   handle() {
-    moveVertical(-1);
+    map[playery - 1][playerx].moveVertical(-1);
   }
 }
 
 class Down implements Input {
   handle() {
-    moveVertical(1);
+    map[playery + 1][playerx].moveVertical(1);
   }
 }
 
