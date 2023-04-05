@@ -105,9 +105,6 @@ function update() {
       let input = inputs.pop();
       input.handle();
     }
-
-
-
   }
 
   function updateMap() {
@@ -136,6 +133,47 @@ function update() {
         map[y][x] = Tile.BOX;
       }
     }
+  }
+}
+
+interface Tile2 {
+  isFlux(): boolean;
+  isUnbreakable(): boolean;
+  isStone(): boolean;
+}
+
+class Flux implements Tile2 {
+  isFlux() {
+    return true;
+  }
+  isUnbreakable() {
+    return false;
+  }
+  isStone() {
+    return false;
+  }
+}
+
+class Unbreakable implements Tile2 {
+  isFlux() {
+    return false;
+  }
+  isUnbreakable() {
+    return true;
+  }
+  isStone() {
+    return false;
+  }
+}
+class Stone implements Tile2 {
+  isFlux() {
+    return false;
+  }
+  isUnbreakable() {
+    return false;
+  }
+  isStone() {
+    return true;
   }
 }
 
@@ -175,7 +213,6 @@ function draw() {
         g.fillStyle = "#ffcc00";
       else if (map[y][x] === Tile.KEY2 || map[y][x] === Tile.LOCK2)
         g.fillStyle = "#00ccff";
-
     }
   }
 
@@ -206,20 +243,27 @@ const RIGHT_KEY = "ArrowRight";
 const DOWN_KEY = "ArrowDown";
 
 class Right implements Input {
-  handle() { moveHorizontal(1); }
-
+  handle() {
+    moveHorizontal(1);
+  }
 }
 
 class Left implements Input {
-  handle() { moveHorizontal(-1); }
+  handle() {
+    moveHorizontal(-1);
+  }
 }
 
 class Up implements Input {
-  handle() { moveVertical(-1); }
+  handle() {
+    moveVertical(-1);
+  }
 }
 
 class Down implements Input {
-  handle() { moveVertical(1); }
+  handle() {
+    moveVertical(1);
+  }
 }
 
 window.addEventListener("keydown", (e) => {
