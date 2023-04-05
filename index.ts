@@ -109,11 +109,9 @@ function update() {
       handleInput(inputs.pop());
     }
 
+
     function handleInput(input: Input) {
-      if (input.isLeft()) moveHorizontal(-1);
-      else if (input.isRight()) moveHorizontal(1);
-      else if (input.isUp()) moveVertical(-1);
-      else if (input.isDown()) moveVertical(1);
+      input.handle();
     }
   }
 
