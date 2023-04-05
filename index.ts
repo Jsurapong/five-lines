@@ -892,13 +892,13 @@ const DOWN_KEY = "ArrowDown";
 
 class Right implements Input {
   handle() {
-    moveHorizontal(1);
+    map[playery][playerx + 1].moveHorizontal(1);
   }
 }
 
 class Left implements Input {
   handle() {
-    moveHorizontal(-1);
+    map[playery][playerx - 1].moveHorizontal(-1);
   }
 }
 
