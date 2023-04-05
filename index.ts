@@ -18,6 +18,7 @@ enum Tile {
 }
 
 interface Input {
+  handleInput(): void;
   isRight(): boolean;
   isLeft(): boolean;
   isUp(): boolean;
@@ -208,6 +209,12 @@ const RIGHT_KEY = "ArrowRight";
 const DOWN_KEY = "ArrowDown";
 
 class Right implements Input {
+  handleInput() {
+    if (false) moveHorizontal(-1);
+    else if (true) moveHorizontal(1);
+    else if (false) moveVertical(-1);
+    else if (false) moveVertical(1);
+  }
   isRight() {
     return true;
   }
