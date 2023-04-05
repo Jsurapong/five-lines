@@ -102,7 +102,8 @@ function update() {
 
   function handleInputs() {
     while (inputs.length > 0) {
-      handleInput(inputs.pop());
+      let input = inputs.pop();
+      input.handle();
     }
 
 
