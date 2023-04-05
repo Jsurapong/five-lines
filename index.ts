@@ -19,10 +19,6 @@ enum Tile {
 
 interface Input {
   handle(): void;
-  isRight(): boolean;
-  isLeft(): boolean;
-  isUp(): boolean;
-  isDown(): boolean;
 }
 
 enum RawInput {
@@ -212,48 +208,15 @@ class Right implements Input {
 }
 
 class Left implements Input {
-  isRight() {
-    return false;
-  }
-  isLeft() {
-    return true;
-  }
-  isUp() {
-    return false;
-  }
-  isDown() {
-    return false;
-  }
+  handle() { moveHorizontal(-1); }
 }
 
 class Up implements Input {
-  isRight() {
-    return false;
-  }
-  isLeft() {
-    return false;
-  }
-  isUp() {
-    return true;
-  }
-  isDown() {
-    return false;
-  }
+  handle() { moveVertical(-1); }
 }
 
 class Down implements Input {
-  isRight() {
-    return false;
-  }
-  isLeft() {
-    return false;
-  }
-  isUp() {
-    return false;
-  }
-  isDown() {
-    return true;
-  }
+  handle() { moveVertical(1); }
 }
 
 window.addEventListener("keydown", (e) => {
