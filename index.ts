@@ -208,18 +208,7 @@ const DOWN_KEY = "ArrowDown";
 
 class Right implements Input {
   handle() { moveHorizontal(1); }
-  isRight() {
-    return true;
-  }
-  isLeft() {
-    return false;
-  }
-  isUp() {
-    return false;
-  }
-  isDown() {
-    return false;
-  }
+
 }
 
 class Left implements Input {
