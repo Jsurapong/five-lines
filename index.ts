@@ -107,9 +107,7 @@ function update() {
     }
 
 
-    function handleInput(input: Input) {
-      input.handle();
-    }
+
   }
 
   function updateMap() {
