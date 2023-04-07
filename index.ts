@@ -250,12 +250,10 @@ class Stone implements Tile {
     return false;
   }
   drop() {
-    //@ts-ignore
-    this.falling = true;
+    this.falling = new Falling();
   }
   rest() {
-    //@ts-ignore
-    this.falling = false;
+    this.falling = new Resting();
   }
 }
 
@@ -293,13 +291,12 @@ class Box implements Tile {
   isBoxy() {
     return true;
   }
+
   drop() {
-    //@ts-ignore
-    this.falling = true;
+    this.falling = new Falling();
   }
   rest() {
-    //@ts-ignore
-    this.falling = false;
+    this.falling = new Resting();
   }
 }
 class Key1 implements Tile {
