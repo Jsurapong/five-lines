@@ -1,5 +1,4 @@
-//Push update into classes https://github.com/thedrlambda/five-lines/commit/024dee03f57d9e470478a0e226b0ad0b0f24f6d6
-
+//Push drop into FallingState https://github.com/thedrlambda/five-lines/commit/1c712879b919931ddf14c7c15322cd4f84b96750
 const TILE_SIZE = 30;
 const FPS = 30;
 const SLEEP = 1000 / FPS;
