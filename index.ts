@@ -317,7 +317,7 @@ class Key implements Tile {
   }
 }
 
-class Lock implements Tile {
+class Lock2 implements Tile {
   constructor(private keyConf: KeyConfiguration) {}
   isAir() {
     return false;
@@ -384,11 +384,11 @@ function transformTile(tile: RawTile) {
     case RawTile.KEY1:
       return new Key(YELLOW_KEY);
     case RawTile.LOCK1:
-      return new Lock(YELLOW_KEY);
+      return new Lock2(YELLOW_KEY);
     case RawTile.KEY2:
       return new Key(BLUE_KEY);
     case RawTile.LOCK2:
-      return new Lock(BLUE_KEY);
+      return new Lock2(BLUE_KEY);
     default:
       assertExhausted(tile);
   }
