@@ -367,6 +367,13 @@ class Map {
       }
     }
   }
+  draw(g: CanvasRenderingContext2D) {
+    for (let y = 0; y < this.map.length; y++) {
+      for (let x = 0; x < this.map[y].length; x++) {
+        this.map[y][x].draw(g, x, y);
+      }
+    }
+  }
 }
 let map = new Map();
 let inputs: Input[] = [];
@@ -490,11 +497,7 @@ function draw(map: Map, player: Player) {
   }
 
   function drawMap(map: Map, g: CanvasRenderingContext2D) {
-    for (let y = 0; y < map.getMap().length; y++) {
-      for (let x = 0; x < map.getMap()[y].length; x++) {
-        map.getMap()[y][x].draw(g, x, y);
-      }
-    }
+    map.draw(g);
   }
 }
 
