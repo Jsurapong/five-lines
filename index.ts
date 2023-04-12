@@ -463,7 +463,7 @@ function draw(player: Player) {
   const g = createGraphics();
 
   drawMap(g);
-  drawPlayer(player, g);
+  player.draw(g);
 
   function createGraphics() {
     let canvas = document.getElementById("GameCanvas") as HTMLCanvasElement;
@@ -481,10 +481,6 @@ function draw(player: Player) {
         map[y][x].draw(g, x, y);
       }
     }
-  }
-
-  function drawPlayer(player: Player, g: CanvasRenderingContext2D) {
-    player.draw(g);
   }
 }
 
