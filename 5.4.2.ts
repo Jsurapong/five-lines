@@ -20,10 +20,10 @@ class ArraySum {
 class ArrayMinimum1 {
   constructor(private accumulator: number) {}
   process(arr: number[]) {
-    for (let i = 0; i < arr.length; i++)
-      if (this.accumulator > arr[i]) {
-        this.processElement(arr[i]);
-      }
+    for (let i = 0; i < arr.length; i++) {
+      this.processElement(arr[i]);
+    }
+
     return this.accumulator;
   }
   processElement(e: number) {
@@ -321,3 +321,5 @@ class ArraySum8 {
     return this.processor.getAccumulator();
   }
 }
+
+let a = new ArraySum8(9);
