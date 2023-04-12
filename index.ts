@@ -369,6 +369,15 @@ class Player {
   setY(y: number) {
     this.y = y;
   }
+  draw(g: CanvasRenderingContext2D) {
+    g.fillStyle = "#ff0000";
+    g.fillRect(
+      player.getX() * TILE_SIZE,
+      player.getY() * TILE_SIZE,
+      TILE_SIZE,
+      TILE_SIZE
+    );
+  }
 }
 let player = new Player();
 
@@ -475,13 +484,7 @@ function draw(player: Player) {
   }
 
   function drawPlayer(player: Player, g: CanvasRenderingContext2D) {
-    g.fillStyle = "#ff0000";
-    g.fillRect(
-      player.getX() * TILE_SIZE,
-      player.getY() * TILE_SIZE,
-      TILE_SIZE,
-      TILE_SIZE
-    );
+    player.draw(g);
   }
 }
 
