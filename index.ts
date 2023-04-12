@@ -480,7 +480,7 @@ function update(map: Map, player: Player) {
 
 function draw(map: Map, player: Player) {
   const g = createGraphics();
-  drawMap(map, g);
+  map.draw(g);
   player.draw(g);
 
   function createGraphics() {
@@ -490,10 +490,6 @@ function draw(map: Map, player: Player) {
     g.clearRect(0, 0, canvas.width, canvas.height);
 
     return g;
-  }
-
-  function drawMap(map: Map, g: CanvasRenderingContext2D) {
-    map.draw(g);
   }
 }
 
