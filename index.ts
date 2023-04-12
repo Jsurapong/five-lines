@@ -200,7 +200,7 @@ class Unbreakable implements Tile {
   }
 }
 
-class Player implements Tile {
+class PlayerTile implements Tile {
   isAir() {
     return false;
   }
@@ -368,7 +368,7 @@ function transformTile(tile: RawTile) {
     case RawTile.AIR:
       return new Air();
     case RawTile.PLAYER:
-      return new Player();
+      return new PlayerTile();
     case RawTile.UNBREAKABLE:
       return new Unbreakable();
     case RawTile.STONE:
@@ -405,7 +405,7 @@ function transformMap() {
 
 function moveToTile(newx: number, newy: number) {
   map[playery][playerx] = new Air();
-  map[newy][newx] = new Player();
+  map[newy][newx] = new PlayerTile();
   playerx = newx;
   playery = newy;
 }
