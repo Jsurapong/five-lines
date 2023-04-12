@@ -379,7 +379,7 @@ class Player {
     map[this.y + dy][this.x].moveVertical(this, dy);
   }
   move(dx: number, dy: number) {
-    moveToTile(this, this.x + dx, this.y + dy);
+    this.moveToTile(this.x + dx, this.y + dy);
   }
   pushHorizontal(tile: Tile, dx: number) {
     if (
@@ -387,7 +387,7 @@ class Player {
       !map[this.y + 1][this.x + dx].isAir()
     ) {
       map[this.y][this.x + dx + dx] = tile;
-      moveToTile(this, this.x + dx, this.y);
+      this.moveToTile(this.x + dx, this.y);
     }
   }
   moveToTile(newx: number, newy: number) {
@@ -440,10 +440,6 @@ function transformMap() {
       map[y][x] = transformTile(rawMap[y][x]);
     }
   }
-}
-
-function moveToTile(player: Player, newx: number, newy: number) {
-  player.moveToTile(newx, newy);
 }
 
 function update(player: Player) {
