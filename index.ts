@@ -468,17 +468,13 @@ function transformMap(map: Map) {
 
 function update(map: Map, player: Player) {
   handleInputs(map, player);
-  updateMap(map);
+  map.update();
 
   function handleInputs(map: Map, player: Player) {
     while (inputs.length > 0) {
       let input = inputs.pop();
       input.handle(map, player);
     }
-  }
-
-  function updateMap(map: Map) {
-    map.update();
   }
 }
 
