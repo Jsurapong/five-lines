@@ -45,7 +45,7 @@ class KeyConfiguration {
     return this._1;
   }
   removeLock(map: Map) {
-    remove(map, this.removeStrategy);
+    map.remove(this.removeStrategy);
   }
 }
 const YELLOW_KEY = new KeyConfiguration("#ffcc00", true, new RemoveLock1());
@@ -569,7 +569,3 @@ window.addEventListener("keydown", (e) => {
   else if (e.key === RIGHT_KEY || e.key === "d") inputs.push(new Right());
   else if (e.key === DOWN_KEY || e.key === "s") inputs.push(new Down());
 });
-
-function remove(map: Map, shouldRemove: RemoveStrategy) {
-  map.remove(shouldRemove);
-}
